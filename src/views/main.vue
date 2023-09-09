@@ -27,7 +27,7 @@
                 </div>
             </div>
             <button class="start"
-            @click="startWatching()"
+            @click="this.isViewingMode = !this.isViewingMode;"
             >
                 <p v-if="!isViewingMode">Начать просмотр</p>
                 <p v-if="isViewingMode">Окончить просмотр</p>
@@ -137,9 +137,6 @@ export default {
                     return '';
                 }
             }
-        },
-        startWatching() {
-            this.isViewingMode = !this.isViewingMode;
         },
         checkIfMobile() {
             this.isMobile = window.innerWidth <= 900;
